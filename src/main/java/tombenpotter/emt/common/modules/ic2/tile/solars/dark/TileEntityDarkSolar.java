@@ -26,9 +26,23 @@ public class TileEntityDarkSolar extends TileEntitySolarBase {
 
     @Override
     public void createEnergy() {
-        if (worldObj.canBlockSeeTheSky(xCoord, yCoord + 1, zCoord) && !worldObj.isDaytime() && !worldObj.isRaining() && !worldObj.isThundering()) {
-            energySource.addEnergy(output);
+        if (yCoord <= 1) {
+            energySource.addEnergy(output * 3 + countEmptyBlocks());
         }
+    }
+
+    private int countEmptyBlocks() {
+        int emptyBlocks = 0;
+        for (int x = xCoord - 6; x < xCoord + 6; x++) {
+            for (int y = yCoord - 6; y < yCoord + 6; y++) {
+                for (int z = zCoord - 6; z < zCoord + 6; z++) {
+                    if (worldObj.isAirBlock(x, y, z)) {
+                        emptyBlocks++;
+                    }
+                }
+            }
+        }
+        return emptyBlocks;
     }
 
     @Override
