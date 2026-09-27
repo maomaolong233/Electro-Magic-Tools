@@ -12,6 +12,11 @@
 
 package tombenpotter.emt.common.modules.ic2.tile.solars.earth;
 
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockCrops;
+import net.minecraft.block.BlockNetherWart;
+import net.minecraft.block.BlockStem;
+import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import tombenpotter.emt.common.modules.ic2.blocks.IC2BlockRegistry;
@@ -26,11 +31,23 @@ public class TileEntityEarthSolar extends TileEntitySolarBase {
 
     @Override
     public void createEnergy() {
-        if (theSunIsVisible && this.yCoord <= 10) {
-            energySource.addEnergy(output * 2.5);
-        } else if (theSunIsVisible) {
-            energySource.addEnergy(output);
+        energySource.addEnergy(1000 + countNaturalBlocks());
+    }
+
+    private int countNaturalBlocks() {
+        int naturalBlocks = 0;
+        for (int x = xCoord - 12; x <= xCoord + 12; x++) {
+            for (int y = yCoord - 12; y <= yCoord + 12; y++) {
+                for (int z = zCoord - 12; z <= zCoord + 12; z++) {
+                    Block block = worldObj.getBlock(x, y, z);
+                    Material material = block.getMaterial();
+                    if (material == Material.wood || material == Material.leaves || block instanceof BlockCrops || block instanceof BlockStem || block instanceof BlockNetherWart) {
+                        naturalBlocks++;
+                    }
+                }
+            }
         }
+        return naturalBlocks;
     }
 
     @Override

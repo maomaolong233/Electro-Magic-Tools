@@ -12,7 +12,9 @@
 
 package tombenpotter.emt.common.modules.ic2.tile.solars.fire;
 
+import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import tombenpotter.emt.common.modules.ic2.blocks.IC2BlockRegistry;
 import tombenpotter.emt.common.modules.ic2.tile.solars.TileEntitySolarBase;
@@ -25,20 +27,28 @@ public class TileEntityFireSolar extends TileEntitySolarBase {
     }
 
     @Override
-    public void checkConditions() {
-        if (!initialized && worldObj != null) {
-            canRain = worldObj.getWorldChunkManager().getBiomeGenAt(xCoord, zCoord).getIntRainfall() > 0;
-            initialized = true;
-        }
-
-        if (worldObj.provider.dimensionId == -1) {
-            energySource.addEnergy(output * 2);
+    public void createEnergy() {
+        int lavaBlocks = countLavaBlocks();
+        if (lavaBlocks > 0) {
+            energySource.addEnergy(output * 2.5 + lavaBlocks * 25);
         } else {
-            if (tick-- == 0) {
-                updateSunState();
-                tick = 64;
+            super.createEnergy();
+        }
+    }
+
+    private int countLavaBlocks() {
+        int lavaBlocks = 0;
+        for (int x = xCoord - 1; x <= xCoord + 1; x++) {
+            for (int y = yCoord - 1; y <= yCoord + 1; y++) {
+                for (int z = zCoord - 1; z <= zCoord + 1; z++) {
+                    Block block = worldObj.getBlock(x, y, z);
+                    if (block == Blocks.lava || block == Blocks.flowing_lava) {
+                        lavaBlocks++;
+                    }
+                }
             }
         }
+        return lavaBlocks;
     }
 
     @Override

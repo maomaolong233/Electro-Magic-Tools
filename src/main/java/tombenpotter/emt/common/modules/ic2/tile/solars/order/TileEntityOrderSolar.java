@@ -28,6 +28,8 @@ public class TileEntityOrderSolar extends TileEntitySolarBase {
     public void createEnergy() {
         if (theSunIsVisible) {
             energySource.addEnergy(output * 3);
+        } else if (!worldObj.isDaytime()) {
+            energySource.addEnergy(500);
         }
     }
 

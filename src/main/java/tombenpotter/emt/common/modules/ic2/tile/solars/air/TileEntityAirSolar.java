@@ -14,6 +14,7 @@ package tombenpotter.emt.common.modules.ic2.tile.solars.air;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import tombenpotter.emt.common.modules.ic2.blocks.IC2BlockRegistry;
 import tombenpotter.emt.common.modules.ic2.tile.solars.TileEntitySolarBase;
 import tombenpotter.emt.common.util.ConfigHandler;
@@ -24,13 +25,31 @@ public class TileEntityAirSolar extends TileEntitySolarBase {
         output = ConfigHandler.compressedSolarOutput;
     }
 
+    private static final int MAX_CHARGE_TICKS = 288000;
+    private int chargeTicks;
+
     @Override
     public void createEnergy() {
-        if (theSunIsVisible && this.yCoord >= 160) {
-            energySource.addEnergy(output * 2.5);
+        if (theSunIsVisible && yCoord >= 140) {
+            if (chargeTicks < MAX_CHARGE_TICKS) {
+                chargeTicks++;
+            }
+            energySource.addEnergy(output * (2.5 + chargeTicks / (double) MAX_CHARGE_TICKS));
         } else if (theSunIsVisible) {
             energySource.addEnergy(output);
         }
+    }
+
+    @Override
+    public void writeToNBT(NBTTagCompound nbttagcompound) {
+        super.writeToNBT(nbttagcompound);
+        nbttagcompound.setInteger("AirSolarChargeTicks", chargeTicks);
+    }
+
+    @Override
+    public void readFromNBT(NBTTagCompound nbttagcompound) {
+        super.readFromNBT(nbttagcompound);
+        chargeTicks = nbttagcompound.getInteger("AirSolarChargeTicks");
     }
 
     @Override
