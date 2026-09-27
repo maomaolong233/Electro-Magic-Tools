@@ -242,12 +242,12 @@ emt.tag.Nano Boots of the Traveller=速度之魔
 emt.tag.Quantum Boots of the Traveller=超越光速
 emt.tag.Electric Scribing Tools=保护墨鱼!
 emt.tag.Etheral Processor=天空如此湛蓝...
-emt.tag.Water Infused Solar Panels=该死又下雨了!
-emt.tag.Entropy Infused Solar Panels=不要惧怕黑暗
-emt.tag.Order Infused Solar Panels=我得到了能量!
-emt.tag.Fire Infused Solar Panels=炽热的危险之地...
-emt.tag.Air Infused Solar Panels=高度不是问题
-emt.tag.Earth Infused Solar Panels=非幽闭症患者定制
+emt.tag.Water Infused Solar Panels=注魔太阳能发电机(水)
+emt.tag.Entropy Infused Solar Panels=注魔太阳能发电机(混沌)
+emt.tag.Order Infused Solar Panels=注魔太阳能发电机(秩序)
+emt.tag.Fire Infused Solar Panels=注魔太阳能发电机(火)
+emt.tag.Air Infused Solar Panels=注魔太阳能发电机(风)
+emt.tag.Earth Infused Solar Panels=注魔太阳能发电机(地)
 emt.tag.UU-Matter Infusion=蕴含魔力的百变液体...
 emt.tag.Portable Node=处处实用
 emt.tag.Electric Hoe of Growth=惊人的自然力量
@@ -298,12 +298,12 @@ emt.text.Nano Boots of the Traveller=你的电子旅行者之靴还不错，但�
 emt.text.Quantum Boots of the Traveller=你利用量子物理学来改良，使得这些量子旅行者之靴如此之快，让你总能在第一时间达到各个地点。但是别忘了薛定谔的猫发生了什么....
 emt.text.Electric Scribing Tools=你不想再杀墨鱼了。因此你研究出了一种补充书写工具的方法，使得他们不再需要墨水。通过静电和圆珠笔技术你做出了能在内部快速回复墨水的工具，只需要充电就能持续使用。
 emt.text.Etheral Processor=在你为了处理众多矿物而开发炼狱熔炉的地狱能量后，你脑子中出现了一些完全不同的想法。现在你使用名为“古德”的力量，来自天空和叫做天堂的这些。这个天域加工机使得每个冶炼的产物双倍，并且有10%的几率产生一个神秘粒作为奖励。你知道他有两个缺点：尽管它使冶炼产物双倍，但这也要双倍于一个物品的冶炼时间。并且由于它是高级魔法的发明，一些普通的冶炼合成会失效。你相信圆石不能在这个奇妙的机器里被烧成石头。
-emt.text.Water Infused Solar Panels=你总是讨厌下雨，他别是当你所有的能源来自太阳能时。你如此讨厌它于是你决定寻找一种让太阳能在雨天工作的方法。你做出来了...这种..水注魔太阳能能在下雨时工作，并且只在下雨时发电。
-emt.text.Entropy Infused Solar Panels=你知道了太阳能晚上会停止工作。为了解决这个问题，你找到了一种让你的太阳能在晚上工作的方法！（只能在晚上工作）
-emt.text.Order Infused Solar Panels=利用秩序的力量，你已经有办法让你的太阳能在白天输出三倍的电力！
-emt.text.Fire Infused Solar Panels=你被下界所吸引，做出了一个怪物。这些太阳能在主世界正常工作，但放在下界也能发电！它真是个怪物...
-emt.text.Air Infused Solar Panels=你的大胆的想法和在高空存在的大量的风使得这些太阳能在Y=160层以上能提供更多的电力。
-emt.text.Earth Infused Solar Panels=你已决定向地心更进一步。这些太阳能在Y=10层以下的地方工作，但是记住它们仍需要在太阳的沐浴下才能工作。
+emt.text.Water Infused Solar Panels=当太阳能发电机的六个面都接触水时，它会输出基础值2.5倍的电量。下雨或雷暴时，它会输出基础值4倍的电量。
+emt.text.Entropy Infused Solar Panels=当高度处于Y=1或以下时，它会输出基础值3倍的电量。以发电机为中心的12x12x12范围内，每有一个空位置，发电量额外增加1EU。
+emt.text.Order Infused Solar Panels=利用秩序的力量，它在白天输出基础值3倍的电量；夜晚也能稳定输出500EU的电量。
+emt.text.Fire Infused Solar Panels=接触岩浆时，它会输出基础值2.5倍的电量。以发电机为中心的3x3x3范围内，每有一个岩浆方块，发电量额外增加25EU。
+emt.text.Air Infused Solar Panels=当高度处于Y=140或以上时，它会输出基础值2.5倍的电量。发电量会在约4小时的现实时间内缓慢提升，最终达到基础值3.5倍的电量。
+emt.text.Earth Infused Solar Panels=它以1000EU的基础值发电。以发电机为中心的25x25x25范围内，每有一个自然方块（木头、树叶或农作物），发电量额外增加1EU。
 emt.text.UU-Matter Infusion=你总是觉得UU物质拥有的力量十分奇特，甚至...看起来像魔法般神奇,特别是大量种类的正确排列能合成物质。然后现在，你已发现了通过注魔合成塑造uu液体的方法。你能使用许多种合成，并且他们大都消耗4~32单位每种基础要素源质。
 emt.text.Portable Node=在对缸中节点进行深入研究后，你成功制作出了一个能生成随机节点的道具。然而，由于你无法理解节点的一些魔法部分所以这个便携及节点将会是凋零且不稳定的。 <BR><BR>你只能通过shift+右键去除它，并且你觉得你应该早些处理它，因为不稳定节点是...十分无法预料的。
 emt.text.Electric Hoe of Growth=你试着升级你的句芒锄。现在它对土地和植物就像之前的句芒锄一样工作。<BR><BR>然而，对你来说这个工具里的魔力过于强力难以全部转为使用一般电力的性能，在它用坏前你还会有几次使用的次数，它是可充电的。
